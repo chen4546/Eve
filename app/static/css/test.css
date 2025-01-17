@@ -1,0 +1,238 @@
+* {
+    font-family: "幼圆", Georgia, Serif;
+}
+
+body {
+    background-image: url("../6.jpg");
+    background-size: cover;
+}
+
+h2, h3 {
+    margin: 0;
+    font-family: "幼圆", Georgia, Serif;
+    width: 160px;
+    height: 10%;
+    background-color: rgba(155, 174, 193, 0.445);
+    color: aliceblue;
+    border: solid rgb(36, 48, 59) 3px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+h3 {
+    font-size: 1.5em;
+
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+#video-record, #video-export {
+    width: 47%;
+    padding: 20px;
+    border-radius: 5px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#video-record {
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+#video-export {
+    margin-right: 20px;
+}
+
+#video-record video, #video-export video {
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    background-color: black;
+    border: 1px solid #ccc;
+    height: 425px;
+}
+/*按钮*/
+button{
+    margin: 5px;
+    padding: 5px 10px;
+    width: 100%;
+    font-size:1.2em;
+    background-image: url("../8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-weight: bolder;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing:1px;
+    border:outset 2px rgb(255, 252, 252);
+}
+
+button:disabled {
+    color:  #c4d9ff;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+button:hover {
+    text-decoration: underline;
+    color: #FFD700;
+}
+
+#uploadFile{
+    width: 30%;
+    border:outset 2px rgb(255, 252, 252);
+}
+
+#uploadFile:hover {
+    text-decoration: underline;
+    color: #FFD700;
+}
+
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-container {
+    position: relative;
+}
+
+/*选择文件*/
+
+.file-upload {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+
+}
+
+.file-upload label {
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.file-upload input[type="file"] {
+    padding: 5px;
+    border: 2px inset #ebebeb;
+    border-radius: 5px;
+    background-color: rgba(155, 174, 193,0.445);
+    color: aliceblue;
+    border:red 2px solid;
+    position:absolute;
+    width:5%;
+    right:37%;
+    z-index:0;
+
+
+}
+
+.file-upload button {
+    padding: 5px 10px;
+    background-color: rgba(155, 174, 193, 0.445);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: aliceblue;
+    cursor: pointer;
+
+
+
+}
+
+.file-upload button:hover {
+    background-color: rgba(155, 174, 193, 0.7);
+}
+
+
+        .fileinput {
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+            margin: 5px;
+            padding: 5px 10px;
+            width: 30%; /* 使按钮宽度与容器一致 */
+            height:23px;
+            background-image: url("../8.jpg");
+            background-size: cover; /* 背景图覆盖整个按钮 */
+            background-repeat: no-repeat; /* 背景图不重复 */
+            font-weight: bolder;
+            border-radius: 10px;
+            color: white; /* 默认字体颜色为白色 */
+            text-decoration: none; /* 默认无下划线 */
+            cursor: pointer; /* 鼠标悬停时显示手形光标 */
+            border:outset 2px rgb(255, 252, 252);
+            font-size:1.2em;
+            z-index:1;
+            padding-right:0;
+        }
+        .fileinput:hover{
+            text-decoration: underline; /* 悬停时字体下划线 */
+            color: #FFD700; /* 悬停时字体颜色为金色 */
+        }
+        .fileinput::after {
+            content: "可以选择视频文件";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .fileinput:hover::after {
+            visibility: visible;
+            opacity: 1;
+        }
+
+#filenameDisplay{
+    padding: 5px;
+    border: 2px inset #ebebeb;
+    border-radius: 5px;
+    background-color: rgba(155, 174, 193,0.445);
+    color: aliceblue;
+    width:30%;
+    height:23px;
+    border-radius: 10px;
+    text-align:center;
+    font-size:1.2em;
+    white-space: nowrap; /* 禁止文本换行 */
+    overflow: hidden; /* 隐藏超出文本框的内容 */
+    text-overflow: ellipsis; /* 当文本超出时显示省略号 */
+}
